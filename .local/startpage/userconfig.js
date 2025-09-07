@@ -283,7 +283,7 @@ const default_configuration = {
             {
               name: "fmhy",
               url: "https://fmhy.pages.dev/",
-              icon: "brand-funimation",
+              icon: "home",
               icon_color: palette.mauve,
             },
             {
