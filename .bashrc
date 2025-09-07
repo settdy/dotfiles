@@ -135,6 +135,11 @@ alias gs="g status"
 alias gp="g push -u origin main"
 alias spot="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
 alias discord="flatpak run com.discordapp.Discord > /dev/null 2>&1"
+
+alias ytmp4="yt-dlp --paths "./Videos/" --format "bestvideo[height<=1080]+bestaudio/best[height<=1080]" --merge-output-format "mp4""
+alias ytmp3="yt-dlp --paths "./Music/" --format "bestaudio/best""
+alias ytplay="yt-dlp --paths "./Videos/playlist/" --yes-playlist"
+
 # Created by `pipx` on 2025-08-24 05:31:17
 export PATH="$PATH:/home/zap/.local/bin"
 
