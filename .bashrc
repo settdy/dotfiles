@@ -132,7 +132,7 @@ alias gcl="g clone"
 alias gd="g diff"
 alias gi="g init"
 alias gs="g status"
-
+alias gp="g push -u origin main"
 alias spot="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
 alias discord="flatpak run com.discordapp.Discord > /dev/null 2>&1"
 # Created by `pipx` on 2025-08-24 05:31:17
