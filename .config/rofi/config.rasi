@@ -13,10 +13,10 @@ configuration{
 }
 @theme "/dev/null/"
 * {
-    bg: #39404f;
-    hv: #8aadf4;
-    primary: #D8DEE9;
-    ug: #D8DEE9;
+    bg: rgba(57, 64, 79, 0.4);
+    hv: rgba(138, 173, 244, 0.4); 
+    primary:rgba(216, 222, 233, 0.4);
+    ug: rgba(216, 222, 233, 0.4);
     font: "JetBrainsMono Nerd Font 16";
     background-color: @bg;
     border: 0px;
