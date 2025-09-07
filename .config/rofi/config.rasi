@@ -1,5 +1,5 @@
 configuration{
-    modi: ["drun", "window", "run"];
+    modi: ["drun", "window", "run", "filebrowser"];
     icon-theme: "Papirus";
     show-icons: true;
     terminal: "alacritty";
@@ -10,6 +10,8 @@ configuration{
     display-drun: " ";
     display-run: " ";
     display-window: " ";
+    display-filebrowser: " ";
+    filebrowser-display-format: "";
 }
 @theme "/dev/null/"
 * {
