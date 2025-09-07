@@ -66,15 +66,9 @@ mouse = "Middle"
 action = "Copy"
 mouse = "Right"
 
-#[mouse.double_click]
-#threshold = 300
-
-#[mouse.triple_click]
-#threshold = 300
-
 [scrolling]
 history = 500
-multiplier = 1
+multiplier = 3
 
 [window]
 decorations = "full"

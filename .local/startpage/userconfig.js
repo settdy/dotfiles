@@ -142,7 +142,7 @@ const default_configuration = {
           links: [
             {
               name: "github",
-              url: "https://github.com",
+              url: "https://github.com/settdy/dotfiles",
               icon: "brand-github",
               icon_color: palette.text,
             },
