@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=polybar
+Exec=polybar
+Comment=
+Terminal=false
+PrefersNonDefaultGPU=false
+Icon=agentdesktop
+Type=Application

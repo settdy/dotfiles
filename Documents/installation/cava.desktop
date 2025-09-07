@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=cava
+Exec=alacritty -e cava
+Comment=
+Terminal=false
+PrefersNonDefaultGPU=false
+Icon=sonic-visualiser
+Type=Application

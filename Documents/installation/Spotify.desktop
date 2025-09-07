@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Spotify
+Exec=/home/zap/Documents/installation/launch-spotify.sh
+Comment=
+Terminal=false
+PrefersNonDefaultGPU=false
+Icon=spotify
+Type=Application
