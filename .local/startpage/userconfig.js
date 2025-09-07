@@ -54,10 +54,16 @@ const default_configuration = {
             },
             {
               name: "instagram",
-              url: "https://musicforprogramming.net",
+              url: "https://instagram.com",
               icon: "brand-instagram",
-              icon_color: palette.peach,
+              icon_color: palette.pink,
             },
+            {
+              name: "proton mail",
+              url: "https://mail.proton.me/u/1/inbox",
+              icon: "mail",
+              icon_color: palette.mauve
+            }
           ],
         },
         {
@@ -184,30 +190,30 @@ const default_configuration = {
           ],
         },
         {
-          name: "resources",
+          name: "math",
           links: [
             {
-              name: "dou",
-              url: "https://dou.ua",
-              icon: "brand-prisma",
+              name: "desmos",
+              url: "https://www.desmos.com/calculator",
+              icon: "graph",
               icon_color: palette.green,
             },
             {
-              name: "hackernews",
-              url: "https://news.ycombinator.com",
+              name: "symbol lab",
+              url: "https://www.symbolab.com/#",
+              icon: "flask-2",
+              icon_color: palette.red,
+            },
+            {
+              name: "wolframalpha",
+              url: "https://www.wolframalpha.com/",
               icon: "brand-redhat",
               icon_color: palette.peach,
             },
             {
-              name: "uber engineering",
-              url: "https://www.uber.com/en-GB/blog/london/engineering",
-              icon: "brand-uber",
-              icon_color: palette.red,
-            },
-            {
-              name: "netflix tech blog",
-              url: "https://netflixtechblog.com",
-              icon: "brand-netflix",
+              name: "mathdf",
+              url: "https://mathdf.com/",
+              icon: "math",
               icon_color: palette.blue,
             },
           ],
@@ -221,6 +227,12 @@ const default_configuration = {
         {
           name: "social media",
           links: [
+            {
+              name: "steam",
+              url: "https://store.steampowered.com",
+              icon: "brand-steam",
+              icon_color: palette.text,
+            },
             {
               name: "reddit",
               url: "https://www.reddit.com/r/unixporn",
@@ -244,7 +256,14 @@ const default_configuration = {
               url: "https://www.deviantart.com/",
               icon: "brand-deviantart",
               icon_color: palette.green
-            }
+            },
+/** 
+            {
+              name: "уoutube",
+              url: "https://www.youtube.com/feed/playlists",
+              icon: "brand-youtube",
+              icon_color: palette.red,
+            }, */
           ],
         },
         {
@@ -257,11 +276,12 @@ const default_configuration = {
               icon_color: palette.yellow,
             },
             {
-              name: "steam",
-              url: "https://store.steampowered.com",
-              icon: "brand-steam",
-              icon_color: palette.text,
+              name: "stats.fm",
+              url: "https://stats.fm",
+              icon: "chart-bar",
+              icon_color:palette.green
             },
+
             {
               name: "steamdb",
               url: "https://steamdb.info",
@@ -274,7 +294,6 @@ const default_configuration = {
               icon: "keyboard",
               icon_color: palette.sky,
             },
-
           ],
         },
         {
