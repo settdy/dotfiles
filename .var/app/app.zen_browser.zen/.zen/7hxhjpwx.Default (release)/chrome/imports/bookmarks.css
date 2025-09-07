@@ -1,0 +1,16 @@
+#PlacesToolbarItems {
+  display: flex;
+  justify-content: center;
+}
+/*this hide folder icon*/
+.bookmark-item[container="true"] .toolbarbutton-icon {
+  display: none !important;
+}
+  /*this hide label bookmark*/
+#personal-bookmarks .bookmark-item:not([container]) .toolbarbutton-text { 
+  display: none !important; 
+}
+  /*remove margin right icon bookmark*/
+#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon[label]:not([label=""]){
+  margin-inline-end: 0 !important;
+}
