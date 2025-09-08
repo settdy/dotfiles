@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=cava
-Exec=alacritty -e cava
+Exec=alacritty --title cava -e cava
 Comment=
 Terminal=false
 PrefersNonDefaultGPU=false

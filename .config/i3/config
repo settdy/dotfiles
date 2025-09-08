@@ -1,6 +1,4 @@
-#*---+---+---+---+---+---+---*
-# | C | O | L | O | R | S | 
-#+---+---+---+---+---+---+---*
+# COLORS
 
 set $rosewater #f4dbd6
 set $flamingo #f0c6c6
@@ -37,17 +35,25 @@ client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
-#*---+---+---+---+---+---+---*
-# | S | T | A | R | T | U | P |
-#+---+---+---+---+---+---+---*
+font pango:JetBrainsMono Nerd Font 12
+exec_always feh --bg-scale /home/zap/Pictures/wallpapers/gavrl-snowy-forest.jpg
+for_window [class="^.*"] border pixel 0
+default_border pixel 1
+title_align center
+
+new_window none 
+new_window 1pixel 
+gaps inner 10
+gaps outer 5
+
+# STARTUP
 set $mod Mod4
 
-font pango:JetBrainsMono Nerd Font 12
-# for_window [class="^.*"] border pixel 0 
+exec_always $HOME/bin/autotiling.py -w 1 4
 exec polybar
+exec --no-startup-id discord 
 exec_always --no-startup-id picom -b
 exec --no-startup-id /usr/libexec/gsd-xsettings
-exec_always feh --bg-scale /home/zap/Pictures/wallpapers/gavrl-snowy-forest.jpg
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -60,31 +66,27 @@ floating_modifier $mod
 
 tiling_drag modifier titlebar
 
-#*---+---+---+---+---+---+---+---+---*
-# | K | E | Y | — | B | I | N | D | S
-#+---+---+---+---+---+---+---+---+---*
-
+# KEYBINDS
 
 bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
-bindsym $mod+d exec wmctrl -x -a "discord.discord"
-bindsym $mod+Period exec code
+bindsym $mod+period exec code
 bindsym $mod+e exec nemo
 bindsym $mod+Tab exec rofi -show window
 bindsym Mod1+space exec rofi -show drun
-bindsym Control+space exec fcitx-remote -t
+bindsym Control_L+space exec fcitx-remote -t
 
 bindsym $mod+Shift+q kill
 bindsym Control+Shift+q kill
 bindsym Mod1+F4 kill
+bindsym $mod+Shift+d focus parent, kill
+bindsym Mod1+F5 floating toggle
 
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# alternativeld, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -95,8 +97,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
@@ -122,13 +122,8 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
 bindsym $mod+a focus parent
-
-
-# reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -156,9 +151,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 
-#*---+---+---+---+---+---+---+---+---+---+---*
-# | W | O | R | K | S | P | A | C | E | S |
-#+---+---+---+---+---+---+---+---+---+---+---*
+# WORKSPACES
 
 set $ws1 "1"
 set $ws2 "2"
@@ -199,4 +192,4 @@ assign [class="discord"] $ws2
 assign [class="steam"] $ws3
 assign [class="obs"] $ws3
 assign [class="Spotify"] $ws4
-assign [class="Io.github.celluloid_player.Celluloid"] $ws4
+assign [class="Io.github.celluloid_player.Celluloid"] $ws4g
