@@ -41,7 +41,3 @@
 .urlbar-page-action {
   padding: 0 inherit !important;
 }
-#urlbar[usertyping] .urlbarView-row:is([type="url"],[type="autofill_origin"],[type="search"]):first-child,
-.urlbarView-row[type="tabtosearch"] {
-  display: none !important;
-}

@@ -3,9 +3,6 @@
  +---+---+---+---+---+---*/
 
 :root {
-  /*  Global Border Radius
-   *  applied to ALL UI elements
-   */
   --uc-border-radius: 8px;
 
   /*  The distance the Statuspanel floats
@@ -16,11 +13,7 @@
 }
 
 /* remove window control buttons */
-.titlebar-buttonbox-container {
-  display: none !important;
-}
-
-#pageActionButton {
+.titlebar-buttonbox-container, #pageActionButton {
   display: none !important;
 }
 
@@ -71,37 +64,20 @@
    *  If enabled the max-width is applied on focus
    *  otherwise the URL Bar will always be it's min-width
    */
-  --uc-urlbar-min-width: 35vw;
-  --uc-urlbar-max-width: 35vw;
-
-  /*  Position of the URL Bar
-   *  possible values:
-   *  1 – tabs on the right
-   *  3 – tabs on the left
-   */
+  --uc-urlbar-min-width: 22vw;
+  --uc-urlbar-max-width: 22vw;
   --uc-urlbar-position: 1;
-
-  /*  Firefox can be a little wonky with the vertical
-   *  URL Bar placement. Change this variable to adapt
-   *  to this when necessary.
-   */
   --uc-urlbar-top-spacing: 1px;
 }
 
-/* Disable the Navigation Buttons */
-#back-button,
-#forward-button {
+/* Disable the Navigation Buttons // permission items */
+#back-button,#forward-button, #identity-permission-box {
   display: none !important;
 }
 
 /* Disables the Tracking Protection Shield */
 /* #tracking-protection-icon-container { display: none !important; } */
 
-/* Encryption and Permissions icons */
-/* Only hides permission items */
-#identity-permission-box {
-  display: none !important;
-}
 /* Hides extension page box */
 #identity-box.extensionPage {
   display: none !important;
@@ -110,13 +86,13 @@
 /* #identity-box { display: none !important } */
 
 /* Hide everything BUT the zoom indicator within the URL Bar */
-/* #page-action-buttons > :not(#urlbar-zoom-button) { display: none !important; } */
+#page-action-buttons > :not(#urlbar-zoom-button) { 
+  display: none !important; 
+}
 
-/* Hide the »Go«-arrow in the URL Bar */
 #urlbar-go-button {
   display: none !important;
 }
-
 /* Hides the Extensions Menu Icon */
 /* #unified-extensions-button { display: none !important; } */
 
@@ -130,26 +106,8 @@
    */
   --uc-active-tab-width: clamp(100px, 30vw, 300px);
   --uc-inactive-tab-width: clamp(100px, 20vw, 200px);
-
-  /*  Enable this to always show the Tab Close button
-   *  possible values:
-   *  show: -moz-inline-block
-   *  hide: none
-   */
   --show-tab-close-button: none;
-
-  /*  Enable this to only show the Tab Close button on tab hover
-   *  possible values:
-   *  show: -moz-inline-block
-   *  hide: none
-   */
   --show-tab-close-button-hover: none;
-
-  /*  Hide the all Tabs button from the Tab Bar
-   *  possible values:
-   *  show: -moz-box
-   *  hide: none
-   */
   --uc-show-all-tabs-button: none;
 
   /*  Left and Right "dip" of the container indicator

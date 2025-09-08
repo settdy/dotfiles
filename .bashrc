@@ -119,7 +119,6 @@ fi
 
 history -c
 alias zap="neofetch"
-alias zen="flatpak run app.zen_browser.zen> /dev/null 2>&1"
 alias powermenu="rofi -show power-menu -modi power-menu:rofi-power-menu> /dev/null 2>&1"
 alias cls="clear"
 alias clr="clear"
@@ -133,8 +132,10 @@ alias gd="g diff"
 alias gi="g init"
 alias gs="g status"
 alias gp="g push -u origin main"
+
 alias spot="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
 alias discord="flatpak run com.discordapp.Discord > /dev/null 2>&1"
+alias ff="firefox > /dev/null 2>&1"
 
 alias ytmp3="yt-dlp -t mp3 --paths "./Music/""
 alias ytmp4="yt-dlp -t mp4 --embed-thumbnail --paths "./Videos/""
