@@ -136,6 +136,7 @@ alias gp="g push -u origin main"
 alias spot="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
 alias discord="flatpak run com.discordapp.Discord > /dev/null 2>&1"
 alias ff="firefox > /dev/null 2>&1"
+alias wifimenu=".local/bin/rofi-wifi-menu.sh"
 
 alias ytmp3="yt-dlp -t mp3 --paths "./Music/""
 alias ytmp4="yt-dlp -t mp4 --embed-thumbnail --paths "./Videos/""
@@ -143,3 +144,5 @@ alias ytplay="yt-dlp --paths "./Videos/playlist/" --yes-playlist"
 
 # Created by `pipx` on 2025-08-24 05:31:17
 export PATH="$PATH:/home/zap/.local/bin"
+
+export PATH=$PATH:/home/zap/.spicetify

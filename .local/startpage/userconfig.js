@@ -110,17 +110,17 @@ const default_configuration = {
               icon: "paperclip",
               icon_color: palette.overlay2,
             },
-            {
-              name: "duck.ai",
-              url: "https://duck.ai",
-              icon: "message-chatbot",
-              icon_color: palette.peach,
-            },
-            {
+ 	    {
               name: "уoutube",
               url: "https://www.youtube.com/feed/playlists",
               icon: "brand-youtube",
               icon_color: palette.red,
+            },
+            {
+              name: "vforedu",
+              url: "https://vforedu.com/",
+              icon: "video",
+              icon_color: palette.peach,
             },
             {
               name: "afterschool",
@@ -307,7 +307,7 @@ const default_configuration = {
             },
             {
               name: "cineby",
-              url: "https://www.patreon.com",
+              url: "https://cineby.app/",
               icon: "device-vision-pro",
               icon_color: palette.red,
             },
