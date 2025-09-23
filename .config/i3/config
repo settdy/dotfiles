@@ -84,6 +84,11 @@ bindsym Control+Shift+q kill
 bindsym Mod1+F4 kill
 bindsym $mod+Shift+d focus parent, kill
 bindsym Mod1+F5 floating toggle
+bindsym Mod1+Tab exec rofi -show window
+bindsym F9 exec playerctl --player=spotify previous
+bindsym F10 exec playerctl --player=spotify play-pause
+bindsym F11 exec playerctl --player=spotify next
+
 
 # change focus
 bindsym $mod+h focus left
@@ -148,7 +153,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume  @DEFAULT_SINK@ +10% && $refresh_i3status

@@ -57,7 +57,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1="~ 󱞩 "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -137,7 +138,7 @@ alias spot="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
 alias discord="flatpak run com.discordapp.Discord > /dev/null 2>&1"
 alias ff="firefox > /dev/null 2>&1"
 alias wifimenu=".local/bin/rofi-wifi-menu.sh"
-
+alias clock="tty-clock -S -C 4"
 alias ytmp3="yt-dlp -t mp3 --paths "./Music/""
 alias ytmp4="yt-dlp -t mp4 --embed-thumbnail --paths "./Videos/""
 alias ytplay="yt-dlp --paths "./Videos/playlist/" --yes-playlist"
