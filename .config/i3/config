@@ -49,16 +49,15 @@ default_floating_border pixel 1
 
 # STARTUP
 set $mod Mod4
+exec_always $HOME/bin/autotiling.py -w 1 4 5
 
 exec polybar
-exec_always $HOME/bin/autotiling.py -w 1 4 5
 exec dunst
 exec picom
+exec fcitx
+exec preload
+
 exec --no-startup-id nm-applet 
-exec --no-startup-id fcitx
-exec --no-startup-id preload
-
-
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id dex --autostart --environment i3
@@ -88,7 +87,7 @@ bindsym Mod1+Tab exec rofi -show window
 bindsym F9 exec playerctl --player=spotify previous
 bindsym F10 exec playerctl --player=spotify play-pause
 bindsym F11 exec playerctl --player=spotify next
-
+bindsym $mod+u exec rofi -show power-menu -modi power-menu:rofi-power-menu
 
 # change focus
 bindsym $mod+h focus left
