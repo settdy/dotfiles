@@ -1,5 +1,7 @@
 [global]
-    monitor = 0
+separator_color= frame
+highlight = "#8aadf4"    
+monitor = 0
     follow = mouse
 		width = 350
     origin = top-right
@@ -55,31 +57,25 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#24273a"
-    foreground = "#CDD6F4"
-    highlight = "#CDD6F4"
-    frame_color = "#181825"
+background = "#24273a"
+foreground = "#cad3f5"
     timeout = 5
 
 [urgency_normal]
     background = "#24273a"
-    foreground = "#CDD6F4"
-    highlight = "#CDD6F4"
-    frame_color = "#181825"
-    timeout = 5
+foreground = "#cad3f5i"
+timeout = 5
 
 [urgency_critical]
-    background = "#24273a"
-    foreground = "#CDD6F4"
-    frame_color = "#f38ba8"
+background = "#24273a"
+foreground = "#cad3f5"
+frame_color = "#f5a97f"
     timeout = 1000
 
 [volume]
     appname = "Volume"
-    highlight = "#cba6f7"
 
 [backlight]
     appname = "Backlight"
-    highlight = "#eba0ac"
 
 # vim: ft=cfg

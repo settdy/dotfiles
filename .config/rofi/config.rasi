@@ -9,6 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
+     mouse: true;
      font: "JetBrainsMono Nerd Font 16";
       modi:                       "drun,run,filebrowser,window";
     show-icons:                 true;

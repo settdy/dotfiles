@@ -60,7 +60,11 @@
         {
             "type": "title",
             "key": "│ HOSTNAME   │{$1}",
-            "format": "{host-name}"
+            "format": "{user-name}@{host-name}"
+        },
+                {
+            "type": "host",
+            "key": "│ MACHINE    │{$1}"
         },
         {
             "type": "localip",
@@ -68,26 +72,9 @@
             "format": "{ipv4}"
         },
         {
-            "type": "localip",
-            "key": "│ MAC ADDR   │{$1}",
-            "format": "{mac} ({ifname})",
-            "showIpv4": false,
-            "showMac": true
-        },
-        {
             "type": "dns",
             "key": "│ DNS        │{$1}",
             "showType": "ipv4"
-        },
-        {
-            "type": "title",
-            "key": "│ USER       │{$1}",
-            "format": "{user-name}"
-        },
-        {
-            "type": "host",
-            "key": "│ MACHINE    │{$1}",
-            "format": "{name}"
         },
         {
             "type": "custom",
@@ -105,11 +92,6 @@
             "showPeCoreCount": false
         },
         {
-            "type": "cpu",
-            "key": "│ CPU FREQ   │{$1}",
-            "format": "{freq-max}{/freq-max}{freq-base}{/}"
-        },
-        {
             "type": "loadavg",
             "compact": false,
             "key": "│ LOAD  {duration>2}m  │{$1}" // pad duration to 2 chars
@@ -118,6 +100,7 @@
             "type": "custom",
             "format": "├────────────┼──────────────────────────────────────────┤"
         },
+       
         {
             "type": "memory",
             "key": "│ MEMORY     │{$1}",
@@ -155,6 +138,17 @@
                 "type": ["bar", "hide-others"]
             }
         },
+        {
+            "type": "custom",
+            "format": "├────────────┼──────────────────────────────────────────┤"
+        },
+        {
+          "type": "bluetooth",
+          "key": "│ DEVICES    │{$1}",
+          "format": "{name} [{battery-percentage}]",
+          "percent": { "type": ["num"] }
+        },
+
         {
             "type": "custom",
             "format": "├────────────┼──────────────────────────────────────────┤"

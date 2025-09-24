@@ -56,7 +56,7 @@ exec dunst
 exec picom
 exec fcitx
 exec preload
-
+exec xset -dpms
 exec --no-startup-id nm-applet 
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id /usr/libexec/gsd-xsettings
