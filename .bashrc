@@ -57,8 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-PS1="~ 󱞩 "
+#   PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;34m\]\w\[\033[00m\] 󱞩 '
+# PS1="~ 󱞩 "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -131,9 +132,9 @@ alias ytmp4="yt-dlp -t mp4 --embed-thumbnail --paths "./Videos/""
 alias ytplay="yt-dlp --paths "./Videos/playlist/" --yes-playlist"
 
 function hp() {
-    echo -e "select B4:E7:B3:B0:A4:02\ninfo\n" | bluetoothctl | grep "Name"
-    echo -e "select B4:E7:B3:B0:A4:02\ninfo\n" | bluetoothctl | grep "Connected"
-    echo -e "select B4:E7:B3:B0:A4:02\ninfo\n" | bluetoothctl | grep "Battery Percentage"
+    echo -e "info B4:E7:B3:B0:A4:02" | bluetoothctl | grep "Name"
+    echo -e "info B4:E7:B3:B0:A4:02" | bluetoothctl | grep "Connected"
+    echo -e "info B4:E7:B3:B0:A4:02" | bluetoothctl | grep "Battery Percentage"
 }
 
 function mouse() {
@@ -143,3 +144,5 @@ function mouse() {
 }
 export PATH="$PATH:/home/zap/.local/bin"
 export PATH=$PATH:/home/zap/.spicetify
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

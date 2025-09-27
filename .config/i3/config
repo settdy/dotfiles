@@ -36,7 +36,7 @@ client.urgent            $peach    $base $peach $overlay0  $transparent
 client.placeholder       $overlay0 $base $text  $overlay0  $transparent
 client.background        $base
 
-font pango:JetBrainsMono Nerd Font 12
+font pango:Maple Mono 12
 exec_always feh --bg-scale /home/zap/Pictures/wallpapers/gavrl-snowy-forest.jpg
 
 title_align center
@@ -56,6 +56,7 @@ exec dunst
 exec picom
 exec fcitx
 exec preload
+exec gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 exec xset -dpms
 exec --no-startup-id nm-applet 
 exec --no-startup-id /usr/libexec/gsd-xsettings
@@ -131,8 +132,8 @@ bindsym $mod+space focus mode_toggle
 
 bindsym $mod+a focus parent
 bindsym $mod+Shift+c reload
-bindsym Print exec gnome-screenshot 
-bindsym Shift+Print exec gnome-screenshot -a
+bindsym Print exec flameshot full -c 
+bindsym Shift+Print exec flameshot gui -c
 
 bindsym $mod+Shift+Escape exec i3lock -c 000000
 bindsym $mod+Shift+r restart
