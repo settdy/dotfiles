@@ -57,7 +57,7 @@ exec picom
 exec fcitx
 exec preload
 exec gsettings set org.gnome.desktop.lockdown disable-lock-screen true
-exec xset -dpms
+exec --no-startup-id xset s off -dpms
 exec --no-startup-id nm-applet 
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id /usr/libexec/gsd-xsettings

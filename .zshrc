@@ -5,7 +5,6 @@ zstyle ':z4h:bindkey' keyboard  'pc'
 zstyle ':z4h:' start-tmux       no
 zstyle ':z4h:' term-shell-integration 'yes'
 zstyle ':z4h:autosuggestions' forward-char 'accept'
-
 zstyle ':z4h:direnv'         enable 'no'
 # Show "loading" and "unloading" notifications from direnv.
 zstyle ':z4h:direnv:success' notify 'yes'
@@ -104,5 +103,8 @@ function mouse() {
 }
 export PATH="$PATH:/home/zap/.local/bin"
 export PATH=$PATH:/home/zap/.spicetify
-
+export PATH="$HOME/.fzf/bin:$PATH"
+export TERM=xterm
+source <(fzf --zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
