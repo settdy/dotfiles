@@ -84,3 +84,4 @@ source <(fzf --zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+eval "$(zoxide init zsh)"

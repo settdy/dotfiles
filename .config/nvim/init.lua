@@ -35,3 +35,4 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+-- vim.keymap.set("n", "<C-f>",require("telescope.builtin").live_grep, {})

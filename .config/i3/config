@@ -1,3 +1,97 @@
+set $mod Mod4
+
+# KEYBINDS
+bindsym Print+exec flameshot full -c 
+bindsym Shift+Print exec flameshot gui -c
+
+bindsym F5 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym F6 exec alacritty -e alsamixer
+bindsym F7 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym F9 exec playerctl --player=spotify previous
+bindsym F10 exec playerctl --player=spotify play-pause
+bindsym F11 exec playerctl --player=spotify next
+bindsym F12 exec ~/.local/bin/brightness.sh
+bindsym $mod+u exec rofi -show power-menu -modi power-menu:rofi-power-menu
+
+bindsym $mod+Return exec alacritty
+bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+e exec nemo
+bindsym $mod+Tab exec rofi -show window
+bindsym Mod1+Tab exec rofi -show window
+bindsym Mod1+space exec rofi -show drun
+bindsym Control+space exec fcitx-remote -t
+bindsym Mod1+Shift exec fcitx-remote -t
+
+bindsym $mod+Shift+q kill
+bindsym Control+Shift+q kill
+bindsym Mod1+F4 kill
+bindsym $mod+Shift+Escape exec i3lock -c 000000
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+F1 exec alacritty -e nvim .config/i3/config
+
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+c split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+p layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+bindsym Mod1+F5 floating toggle
+
+# resize window 
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume  @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
 # COLORS
 
 set $rosewater #f4dbd6
@@ -46,9 +140,7 @@ gaps outer 0
 default_border none
 default_floating_border pixel 1
 
-
 # STARTUP
-set $mod Mod4
 exec_always $HOME/bin/autotiling.py -w 1 4 5
 
 exec polybar
@@ -56,6 +148,7 @@ exec dunst
 exec picom
 exec preload
 exec gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+exec --no-startup-id fcitx-remote
 exec --no-startup-id xset s off -dpms
 exec --no-startup-id nm-applet 
 exec --no-startup-id /usr/libexec/gsd-xsettings
@@ -68,97 +161,6 @@ set $refresh_i3status killall -SIGUSR1 i3status
 floating_modifier $mod
 
 tiling_drag modifier titlebar
-
-# KEYBINDS
-bindsym $mod+Return exec alacritty
-bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+period exec code
-bindsym $mod+e exec nemo
-bindsym $mod+Tab exec rofi -show window
-bindsym Mod1+space exec rofi -show drun
-bindsym Control+space exec fcitx-remote -t
-
-bindsym $mod+Shift+q kill
-bindsym Control+Shift+q kill
-bindsym Mod1+F4 kill
-bindsym $mod+Shift+d focus parent, kill
-bindsym Mod1+F5 floating toggle
-bindsym Mod1+Tab exec rofi -show window
-bindsym F9 exec playerctl --player=spotify previous
-bindsym F10 exec playerctl --player=spotify play-pause
-bindsym F11 exec playerctl --player=spotify next
-bindsym F12 exec ~/.local/bin/brightness.sh
-bindsym $mod+u exec rofi -show power-menu -modi power-menu:rofi-power-menu
-
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+c split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+p layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-bindsym $mod+a focus parent
-bindsym $mod+Shift+c reload
-bindsym Print exec flameshot full -c 
-bindsym Shift+Print exec flameshot gui -c
-
-bindsym $mod+Shift+Escape exec i3lock -c 000000
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window 
-mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-bindsym $mod+r mode "resize"
-
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume  @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 
 # WORKSPACES
@@ -215,4 +217,4 @@ assign [class="obs"] $ws3
 assign [class="Spotify"] $ws4
 assign [class="Io.github.celluloid_player.Celluloid"] $ws4
 
-#for_window [class="Alacritty" title="cava"] floating enable, resize set 600 400, move position 76 598
+# for_window [class="Alacritty" title="cava"] floating enable, resize set 600 400, move position 76 598
