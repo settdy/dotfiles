@@ -1,7 +1,7 @@
 set $mod Mod4
 
 # KEYBINDS
-bindsym Print+exec flameshot full -c 
+bindsym Print exec flameshot full -c 
 bindsym Shift+Print exec flameshot gui -c
 
 bindsym F5 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -21,6 +21,7 @@ bindsym Mod1+Tab exec rofi -show window
 bindsym Mod1+space exec rofi -show drun
 bindsym Control+space exec fcitx-remote -t
 bindsym Mod1+Shift exec fcitx-remote -t
+bindsym Control+Shift+l exec fcitx-remote -t
 
 bindsym $mod+Shift+q kill
 bindsym Control+Shift+q kill
@@ -141,10 +142,11 @@ default_border none
 default_floating_border pixel 1
 
 # STARTUP
-exec_always $HOME/bin/autotiling.py -w 1 4 5
+exec_always $HOME/bin/autotiling.py -w 1 2 4 5
 
 exec polybar
 exec dunst
+exec flameshot
 exec picom
 exec preload
 exec gsettings set org.gnome.desktop.lockdown disable-lock-screen true

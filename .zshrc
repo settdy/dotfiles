@@ -1,4 +1,10 @@
 export EDITOR="nvim"
+export GPG_TTY=$TTY
+export PATH="$PATH:/home/zap/.local/bin"
+export PATH=$PATH:/home/zap/.spicetify
+export PATH="$HOME/.fzf/bin:$PATH"
+export TERM=xterm
+
 zstyle ':z4h:' auto-update      'no'
 zstyle ':z4h:' auto-update-days '28'
 zstyle ':z4h:bindkey' keyboard  'pc'
@@ -15,15 +21,13 @@ z4h init || return
 
 path=(~/bin $path)
 
-export GPG_TTY=$TTY
-
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
 z4h bindkey z4h-backward-kill-zword Ctrl+Alt+Backspace
-z4h bindkey undo Ctrl+/ Shift+Tab  # undo the last command line change
-z4h bindkey z4h-cd-back    Alt+Left   # cd into the previous directory
-z4h bindkey z4h-cd-forward Alt+Right  # cd into the next directory
-z4h bindkey z4h-cd-up      Alt+Up     # cd into the parent directory
-z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
+z4h bindkey undo Ctrl+/ Shift+Tab  
+z4h bindkey z4h-cd-back    Alt+Left   
+z4h bindkey z4h-cd-forward Alt+Right  
+z4h bindkey z4h-cd-up      Alt+Up     
+z4h bindkey z4h-cd-down    Alt+Down   
 autoload -Uz zmv
 preload
 function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
@@ -32,8 +36,8 @@ compdef _directories md
 
 alias tree='tree -a -I .git'
 alias ls="${aliases[ls]:-ls} -A"
-setopt glob_dots     # no special treatment for file names with a leading dot
-setopt no_auto_menu  # require an extra TAB press to open the completion menu
+setopt glob_dots     
+setopt no_auto_menu  
 
 alias n="nvim"
 alias zap="neofetch"
@@ -41,12 +45,15 @@ alias ff="fastfetch"
 alias wifimenu=".local/bin/rofi-wifi-menu.sh"
 alias powermenu="rofi -show power-menu -modi power-menu:rofi-power-menu> /dev/null 2>&1"
 alias brightmenu=".local/bin/brightness.sh"
+alias discord="xdg-open 'https://discord.com/app'"
 
 alias cls="clear"
 alias clr="clear"
+alias rl="killall picom polybar"
 alias nf='find . -type f | fzf --preview="cat {}"| xargs -r nvim' 
 alias f='find . -type f | fzf --preview="cat {}"' 
 alias d="ddgr"
+alias bw="$HOME/.local/bin/bw"
 
 alias g="git --git-dir=$HOME/Documents/dotfiles/ --work-tree=$HOME"
 alias ga="g add"
@@ -58,8 +65,6 @@ alias gs="g status"
 alias gp="g push -u origin main"
 
 alias spot="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
-alias discord="flatpak run com.discordapp.Discord > /dev/null 2>&1"
-alias clock="tty-clock -S -C 4"
 alias ytmp3="yt-dlp -t mp3 --paths "./Music/""
 alias ytmp4="yt-dlp -t mp4 --embed-thumbnail --paths "./Videos/""
 alias ytplay="yt-dlp --paths "./Videos/playlist/" --yes-playlist"
@@ -76,11 +81,7 @@ function mouse() {
     	echo -e "info F4:EE:25:88:7F:98" | bluetoothctl |grep "Connected"
     	echo -e "info F4:EE:25:88:7F:98" | bluetoothctl |grep "Battery Percentage"
 }
-export PATH="$PATH:/home/zap/.local/bin"
-export PATH=$PATH:/home/zap/.spicetify
-export PATH="$HOME/.fzf/bin:$PATH"
-export TERM=xterm
-source <(fzf --zsh)
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true

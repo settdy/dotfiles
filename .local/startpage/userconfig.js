@@ -76,6 +76,12 @@ const default_configuration = {
               icon_color: palette.blue,
             },
             {
+              name: "keep",
+              url : "https://keep.google.com/u/0/#home",
+              icon: "brand-google-fit",
+              icon_color: palette.yellow
+            },
+            {
               name: "gmail",
               url: "https://mail.google.com/mail/u/1/#inbox",
               icon: "brand-gmail",
@@ -234,6 +240,12 @@ const default_configuration = {
               icon_color: palette.text,
             },
             {
+              name: "discord",
+              url: "https://www.discord.com/app/",
+              icon: "brand-discord",
+              icon_color: palette.blue
+            },
+            {
               name: "reddit",
               url: "https://www.reddit.com/r/unixporn",
               icon: "brand-reddit",
@@ -251,13 +263,7 @@ const default_configuration = {
               icon: "brand-tumblr",
               icon_color: palette.mauve,
             },
-            {
-              name: "deviantart",
-              url: "https://www.deviantart.com/",
-              icon: "brand-deviantart",
-              icon_color: palette.green
-            },
-/** 
+/**
             {
               name: "уoutube",
               url: "https://www.youtube.com/feed/playlists",
