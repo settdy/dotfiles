@@ -3,6 +3,7 @@ set $mod Mod4
 # KEYBINDS
 bindsym Print exec flameshot full -c 
 bindsym Shift+Print exec flameshot gui -c
+bindsym $mod+Shift+e exec rofimoji
 
 bindsym F5 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym F6 exec alacritty -e alsamixer
@@ -151,6 +152,7 @@ exec picom
 exec preload
 exec gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 exec --no-startup-id fcitx-remote
+exec --no-startup-id -d fcitx
 exec --no-startup-id xset s off -dpms
 exec --no-startup-id nm-applet 
 exec --no-startup-id /usr/libexec/gsd-xsettings
@@ -219,4 +221,6 @@ assign [class="obs"] $ws3
 assign [class="Spotify"] $ws4
 assign [class="Io.github.celluloid_player.Celluloid"] $ws4
 
-# for_window [class="Alacritty" title="cava"] floating enable, resize set 600 400, move position 76 598
+for_window [class="Alacritty" title="cava"] floating enable, resize set 600 400, move position 669 570
+for_window [class="Flemozi"] floating enable
+for_window [class="Yad" title="yad-calendar"] floating enable

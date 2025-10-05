@@ -45,6 +45,7 @@ alias ff="fastfetch"
 alias wifimenu=".local/bin/rofi-wifi-menu.sh"
 alias powermenu="rofi -show power-menu -modi power-menu:rofi-power-menu> /dev/null 2>&1"
 alias brightmenu=".local/bin/brightness.sh"
+alias bt=".local/bin/rofi-bluetooth"
 alias discord="xdg-open 'https://discord.com/app'"
 
 alias cls="clear"

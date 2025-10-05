@@ -5,9 +5,11 @@ get_status() {
      elif [ "$status" = "No players found" ]; then echo ""
     fi
 }
-
 case "$1" in
     --toggle)
+      if [ "$(playerctl --player=spotify status 2>&1)" = "No players found" ];
+      then bash -c '$HOME/Documents/installation/launch-spotify.sh' 
+      fi
     playerctl --player=spotify play-pause
         ;;
     *)
