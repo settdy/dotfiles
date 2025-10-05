@@ -133,7 +133,7 @@ client.placeholder       $overlay0 $base $text  $overlay0  $transparent
 client.background        $base
 
 font pango:Maple Mono 12
-exec_always feh --bg-scale /home/zap/Pictures/wallpapers/gavrl-snowy-forest.jpg
+exec_always feh --bg-scale /home/zap/Pictures/wallpapers/calm-night.png
 
 title_align center
 
