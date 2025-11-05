@@ -36,7 +36,7 @@ const default_configuration = {
   disabled: [],
   localIcons: true,
   localFonts: true,
-  fastlink: "https://www.reddit.com/r/unixporn/",
+  fastlink: "https://www.github.com/settdy/dotfiles/",
   openLastVisitedTab: true,
   tabs: [
     {

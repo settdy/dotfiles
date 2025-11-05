@@ -8,6 +8,7 @@ bindsym $mod+Shift+e exec rofimoji
 bindsym F5 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym F6 exec alacritty -e alsamixer
 bindsym F7 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym F8 exec cinnamon-settings power
 bindsym F9 exec playerctl --player=spotify previous
 bindsym F10 exec playerctl --player=spotify play-pause
 bindsym F11 exec playerctl --player=spotify next
@@ -215,8 +216,9 @@ bindsym $mod+Ctrl+0 [workspace=$ws10] kill
 
 assign [class="firefox"] $ws1
 assign [class="Code"] $ws1
-assign [class="discord"] $ws2
+assign [class="vesktop"] $ws2
 assign [class="steam"] $ws3
+assign [class="Lutris"] $ws3
 assign [class="obs"] $ws3
 assign [class="Spotify"] $ws4
 assign [class="Io.github.celluloid_player.Celluloid"] $ws4

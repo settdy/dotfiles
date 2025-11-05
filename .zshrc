@@ -65,11 +65,13 @@ alias gi="g init"
 alias gs="g status"
 alias gp="g push -u origin main"
 
-alias spot="LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify"
 alias ytmp3="yt-dlp -t mp3 --paths "./Music/""
 alias ytmp4="yt-dlp -t mp4 --embed-thumbnail --paths "./Videos/""
 alias ytplay="yt-dlp --paths "./Videos/playlist/" --yes-playlist"
 alias font="fc-list"
+
+alias play="playerctl play"
+alias pause="playerctl pause"
 
 function hp() {
     echo -e "info B4:E7:B3:B0:A4:02" | bluetoothctl | grep "Name"
@@ -82,8 +84,12 @@ function mouse() {
     	echo -e "info F4:EE:25:88:7F:98" | bluetoothctl |grep "Connected"
     	echo -e "info F4:EE:25:88:7F:98" | bluetoothctl |grep "Battery Percentage"
 }
+function zl() { z "$@" && ls; }
+function czl() { clear; z "$@" && ls; }
+function zcl() { clear; z "$@" && ls; }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+POWERLEVEL9K_TERM_SHELL_INTEGRATION=true
 eval "$(zoxide init zsh)"

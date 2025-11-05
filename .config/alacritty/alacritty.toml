@@ -77,7 +77,7 @@ blinking = "Off"
 shape = "block"
 
 [font]
-size = 12
+size = 16
 normal = { family= "JetBrainsMono Nerd Font", style = "Medium" }
 bold = { family= "JetBrainsMono Nerd Font", style = "Bold" }
 italic = { family= "JetBrainsMono Nerd Font", style = "MediumItalic" }
